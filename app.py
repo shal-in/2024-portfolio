@@ -5,7 +5,7 @@ import base64
 import datetime
 
 app = Flask(__name__)
-DEFAULT_API_URL = 'https://url-shortener-626732236809.europe-west1.run.app'
+DEFAULT_API_URL = 'https://url-shortener-626732236809.europe-west1.run.app/api'
 
 if not os.path.exists("/date.txt"):
     date = datetime.datetime.now()
