@@ -134,7 +134,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Hyperlinks
 function openInANewTab(url) {
-        const newWindow = window.open(url, '_blank');
+    function openInANewTab(url) {
+        try {
+            const newWindow = window.open(url, '_blank');
+            if (!newWindow) throw new Error("Popup blocked or invalid URL");
+        } catch (error) {
+            alert("Sorry, that link seems to be broken. I'm aware of it and working to fix it.");
+            console.error("Failed to open link:", url, error);
+        }
+    }
 }
 
 const hyperlinkEls = Array.from(document.querySelectorAll(".hyperlink"));
