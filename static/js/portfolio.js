@@ -134,14 +134,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Hyperlinks
 function openInANewTab(url) {
-    function openInANewTab(url) {
-        try {
-            const newWindow = window.open(url, '_blank');
-            if (!newWindow) throw new Error("Popup blocked or invalid URL");
-        } catch (error) {
-            alert("Sorry, that link seems to be broken. I'm aware of it and working to fix it.");
-            console.error("Failed to open link:", url, error);
-        }
+    try {
+        const newWindow = window.open(url, '_blank');
+        if (!newWindow) throw new Error("Popup blocked or invalid URL");
+    } catch (error) {
+        alert("Sorry, that link seems to be broken. I'm aware of it and working to fix it.");
+        console.error("Failed to open link:", url, error);
     }
 }
 
